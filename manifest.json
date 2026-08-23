@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "FocusFlow",
+  "short_name": "FocusFlow",
+  "version": "1.1.0",
+  "description": "Ambient soundscapes, Pomodoro, site blocker, goals, weather & Focus Home — private, offline-first.",
+  "author": "FocusFlow Contributors",
+  "homepage_url": "https://github.com/your-org/focusflow",
+  "offline_enabled": true,
+  "incognito": "spanning",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "alarms", "offscreen", "notifications", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FocusFlow"
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "toggle-pause": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Pause / resume current session"
+    },
+    "stop-session": {
+      "suggested_key": { "default": "Alt+Shift+S" },
+      "description": "Stop current session"
+    }
+  }
+}
