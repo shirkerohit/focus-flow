@@ -578,13 +578,15 @@ setInterval(() => {
 }, 250);
 
 chrome.storage.onChanged.addListener((changes, area) => {
-  if (area !== 'local' || !changes[Storage.KEYS.sessions]) return;
-  Storage.getSessions().then((list) => {
-    sessions = list;
-    renderDashboard();
-    renderGoal();
+    if (area !== 'local' || !changes[Storage.KEYS.sessions]) return;
+    Storage.getSessions().then((list) => {
+      sessions = list;
+      if (list.length > 0) state.session = list[list.length - 1];
+      renderDashboard();
+      renderGoal();
+      render();
+    });
   });
-});
 
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg && msg.target === 'popup' && msg.type === 'FF_STATE') {
