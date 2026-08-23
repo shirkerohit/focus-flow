@@ -27,8 +27,8 @@
     </div>
     <div class="header-actions">
       <span class="status-pill" id="status-pill"><span class="eq"><i></i><i></i><i></i></span><span id="status-text">Idle</span></span>
-      <button class="icon-btn" id="btn-theme" title="Theme: Auto">◐</button>
-      <button class="icon-btn" id="btn-close" title="Close">✕</button>
+      <button type="button" class="icon-btn" id="btn-theme" title="Theme: Auto">◐</button>
+      <button type="button" class="icon-btn" id="btn-close" title="Close">✕</button>
     </div>
   </header>
 
@@ -45,9 +45,9 @@
         <div class="cycle-hero" id="cycle-hero"></div>
       </div>
       <div class="hero-controls">
-        <button class="btn btn-primary" id="btn-start">Start Focus</button>
-        <button class="btn btn-secondary hidden" id="btn-pause">Pause</button>
-        <button class="btn btn-danger hidden" id="btn-stop">Stop</button>
+        <button type="button" class="btn btn-primary" id="btn-start">Start Focus</button>
+        <button type="button" class="btn btn-secondary hidden" id="btn-pause">Pause</button>
+        <button type="button" class="btn btn-danger hidden" id="btn-stop">Stop</button>
       </div>
       <div class="hero-sub">
         <span id="goal-hero">0 / 0 min today</span>
@@ -71,8 +71,8 @@
         <span class="vol-value" id="volume-value">60%</span>
       </div>
       <div class="mode-toggle" id="mode-toggle" style="margin-top:14px">
-        <button class="mode-btn active" id="mode-focus" data-mode="focus">Focus</button>
-        <button class="mode-btn" id="mode-always" data-mode="always">Always On</button>
+        <button type="button" class="mode-btn active" id="mode-focus" data-mode="focus">Focus</button>
+        <button type="button" class="mode-btn" id="mode-always" data-mode="always">Always On</button>
       </div>
       <div class="mini-row">
         <label>Task <input type="text" id="task-input" maxlength="120" placeholder="What are you focusing on?" /></label>
@@ -100,7 +100,7 @@
       <div class="blocker-list" id="blocker-list" style="min-height:22px"></div>
       <div class="blocker-add-row">
         <input type="text" id="blocker-input" placeholder="Add site e.g. youtube.com" />
-        <button class="btn btn-secondary" id="btn-add-block" style="min-width:70px;padding:8px 12px;font-size:12px;">Add</button>
+        <button type="button" class="btn btn-secondary" id="btn-add-block" style="min-width:70px;padding:8px 12px;font-size:12px;">Add</button>
       </div>
     </section>
 
@@ -115,9 +115,9 @@
         <label class="toggle" style="font-size:12px"><input type="checkbox" class="toggle-input" id="notif-toggle" checked /><span class="toggle-track"></span><span class="toggle-label">Notifications</span></label>
       </div>
       <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-        <button class="btn btn-secondary" id="btn-export" style="padding:8px 14px;font-size:12px;">Export</button>
-        <button class="btn btn-secondary" id="btn-import" style="padding:8px 14px;font-size:12px;">Import</button><input type="file" id="import-file" accept=".json" style="display:none" />
-        <button class="btn btn-danger" id="btn-reset" style="padding:8px 14px;font-size:12px;">Reset stats</button>
+        <button type="button" class="btn btn-secondary" id="btn-export" style="padding:8px 14px;font-size:12px;">Export</button>
+        <button type="button" class="btn btn-secondary" id="btn-import" style="padding:8px 14px;font-size:12px;">Import</button><input type="file" id="import-file" accept=".json" style="display:none" />
+        <button type="button" class="btn btn-danger" id="btn-reset" style="padding:8px 14px;font-size:12px;">Reset stats</button>
       </div>
     </section>
 

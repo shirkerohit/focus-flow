@@ -170,7 +170,8 @@ function renderModeAndSession() {
   $('session-view').classList.toggle('hidden', !session);
 
   if (!session) {
-    $('focus-setup').classList.toggle('hidden', effectiveMode === 'always');
+    // Always show setup; renderSetup will hide presets/custom for Always On but keep Start button
+    $('focus-setup').classList.remove('hidden');
     renderSetup(effectiveMode);
     return;
   }
@@ -183,6 +184,9 @@ function renderSetup(mode) {
   const isFocus = mode === 'focus';
   $('presets').classList.toggle('hidden', !isFocus);
   document.querySelector('.custom-row').classList.toggle('hidden', !isFocus);
+  document.querySelector('.task-row').classList.toggle('hidden', !isFocus);
+  const pomToggleRow = $('pomodoro-toggle')?.closest('.toggle');
+  if (pomToggleRow) pomToggleRow.classList.toggle('hidden', !isFocus);
   $('btn-start').textContent = isFocus ? 'Start Focus' : 'Start Always On';
   // task input
   const taskInput = $('task-input');
@@ -201,8 +205,8 @@ function renderSetup(mode) {
   // pomodoro visibility
   const pomodoroEnabled = state.settings.pomodoroEnabled;
   $('pomodoro-toggle').checked = pomodoroEnabled;
-  $('pomodoro-detail').classList.toggle('hidden', !pomodoroEnabled);
-  $('hint-pomodoro').style.display = pomodoroEnabled ? 'block' : 'none';
+  $('pomodoro-detail').classList.toggle('hidden', !pomodoroEnabled || !isFocus);
+  $('hint-pomodoro').style.display = (pomodoroEnabled && isFocus) ? 'block' : 'none';
   if (pomodoroEnabled) {
     $('short-break').value = state.settings.shortBreakMinutes;
     $('long-break').value = state.settings.longBreakMinutes;

@@ -17,7 +17,7 @@
       <span class="brand-name">FocusFlow</span>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
-      <button class="link-btn" id="btn-home" title="Open Focus Home" style="padding:6px 10px">✨ Home</button>
+      <button type="button" class="link-btn" id="btn-home" title="Open Focus Home" style="padding:6px 10px">✨ Home</button>
       <div class="status-pill" id="status-pill">
         <span class="eq" id="eq-indicator" aria-hidden="true"><i></i><i></i><i></i></span>
         <span id="status-text">Idle</span>
@@ -61,8 +61,8 @@
     <!-- Mode + Task + Timer -->
     <section class="card">
       <div class="mode-toggle" id="mode-toggle">
-        <button class="mode-btn" id="mode-focus" data-mode="focus">Focus</button>
-        <button class="mode-btn" id="mode-always" data-mode="always">Always On</button>
+        <button type="button" class="mode-btn" id="mode-focus" data-mode="focus">Focus</button>
+        <button type="button" class="mode-btn" id="mode-always" data-mode="always">Always On</button>
       </div>
 
       <!-- Focus setup -->
@@ -94,7 +94,7 @@
           <label class="toggle" style="font-size:12px"><input type="checkbox" class="toggle-input" id="auto-focus" /><span class="toggle-track"></span><span class="toggle-label">Auto-start next focus</span></label>
         </div>
 
-        <button class="btn btn-primary btn-block" id="btn-start">Start Focus</button>
+        <button type="button" class="btn btn-primary btn-block" id="btn-start">Start Focus</button>
         <div class="hint-sm" id="hint-pomodoro" style="display:none">Pomodoro: 30m focus → 5m break ×4 → 15m long break</div>
       </div>
 
@@ -113,11 +113,11 @@
           </div>
         </div>
         <div class="session-controls">
-          <button class="btn btn-secondary" id="btn-pause-resume">Pause</button>
-          <button class="btn btn-danger" id="btn-stop">Stop</button>
+          <button type="button" class="btn btn-secondary" id="btn-pause-resume">Pause</button>
+          <button type="button" class="btn btn-danger" id="btn-stop">Stop</button>
         </div>
         <div class="break-controls hidden" id="break-controls">
-          <button class="btn btn-secondary btn-block" id="btn-skip-break">Skip break → Focus</button>
+          <button type="button" class="btn btn-secondary btn-block" id="btn-skip-break">Skip break → Focus</button>
         </div>
       </div>
     </section>
@@ -136,7 +136,7 @@
       <div class="blocker-list" id="blocker-list"></div>
       <div class="blocker-add-row">
         <input type="text" id="blocker-input" placeholder="Add site (e.g., youtube.com)" />
-        <button class="btn btn-secondary" id="btn-add-block">Add</button>
+        <button type="button" class="btn btn-secondary" id="btn-add-block">Add</button>
       </div>
     </section>
 
@@ -160,9 +160,9 @@
         <ul class="recent-list" id="recent-list"></ul>
       </div>
       <div class="dash-actions">
-        <button class="link-btn" id="btn-export">Export</button>
-        <button class="link-btn" id="btn-import">Import</button><input type="file" id="import-file" accept=".json" style="display:none" />
-        <button class="link-danger" id="btn-reset-stats">Reset statistics</button>
+        <button type="button" class="link-btn" id="btn-export">Export</button>
+        <button type="button" class="link-btn" id="btn-import">Import</button><input type="file" id="import-file" accept=".json" style="display:none" />
+        <button type="button" class="link-danger" id="btn-reset-stats">Reset statistics</button>
       </div>
       <div class="goal-edit-row">
         <label>Daily goal <input type="number" id="daily-goal" min="15" max="480" step="15" value="120" /> min</label>

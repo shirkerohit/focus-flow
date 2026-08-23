@@ -345,15 +345,17 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .session-when { color: var(--text-dim); font-size: 11.5px; }
 
 .link-danger {
-  display: block;
-  margin-top: 11px;
-  border: none; background: none;
+  border: 1px solid var(--border);
+  background: transparent;
   color: var(--danger);
   font-family: inherit; font-size: 11.5px;
+  padding: 6px 10px;
+  border-radius: 999px;
   cursor: pointer;
-  opacity: 0.75;
+  opacity: 0.85;
+  transition: border-color 0.15s, opacity 0.15s;
 }
-.link-danger:hover { opacity: 1; text-decoration: underline; }
+.link-danger:hover { border-color: var(--danger); opacity: 1; }
 
 /* ---------- Goal / Streak ---------- */
 .goal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
@@ -419,9 +421,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .blocker-add-row input:focus{border-color:var(--accent)}
 .link-btn{border:1px solid var(--border);background:var(--bg);color:var(--text-dim);font:inherit;font-size:11.5px;padding:6px 10px;border-radius:999px;cursor:pointer}
 .link-btn:hover{border-color:var(--accent);color:var(--accent)}
-.dash-actions{display:flex;align-items:center;gap:8px;margin-top:11px;flex-wrap:wrap}
-.goal-edit-row{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--text-dim);flex-wrap:wrap}
-.goal-edit-row input[type=number]{width:64px;padding:6px 8px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.dash-actions{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap;padding-top:10px;border-top:1px solid var(--border)}
+.goal-edit-row{display:flex;align-items:center;gap:12px;margin-top:12px;padding:10px;background:var(--bg);border-radius:10px;border:1px solid var(--border);font-size:12px;color:var(--text-dim);flex-wrap:wrap}
+.goal-edit-row input[type=number]{width:68px;padding:7px 10px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit;text-align:center;font-weight:600}
+.goal-edit-row input[type=number]:focus{border-color:var(--accent);outline:none}
 
 /* break ring recolor */
 .break-mode .ring-fg{stroke:#2e7d32}
