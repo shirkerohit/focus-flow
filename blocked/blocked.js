@@ -60,7 +60,7 @@ document.getElementById('btn-disable').addEventListener('click', async (e) => {
 
 document.getElementById('btn-home').addEventListener('click', (e) => {
   e.preventDefault();
-  const homeUrl = chrome.runtime.getURL('home.html');
+  const homeUrl = chrome.runtime.getURL('home/home.html');
   try { location.href = homeUrl; } catch { window.open(homeUrl, '_blank'); }
 });
 

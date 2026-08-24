@@ -11,7 +11,7 @@ const BADGE_ALARM = 'ff-badge-tick';
 const WEATHER_ALARM = 'ff-weather-sync';
 const WEATHER_LOCATION_KEY = 'ff_weather_location';
 const WEATHER_CACHE_KEY = 'ff_weather_cache';
-const OFFSCREEN_URL = 'offscreen.html';
+const OFFSCREEN_URL = 'offscreen/offscreen.html';
 const NATURAL_STOP_FADE = 3;
 const QUICK_STOP_FADE = 0.5;
 
@@ -505,7 +505,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   enqueue(async () => {
     const matched = await isBlockedHost(host);
     if (matched) {
-      const blockedUrl = chrome.runtime.getURL('blocked.html') +
+      const blockedUrl = chrome.runtime.getURL('blocked/blocked.html') +
         `?host=${encodeURIComponent(matched)}&url=${encodeURIComponent(url)}&remain=${encodeURIComponent(String(await getRemainingForBlockPage()))}`;
       try { await chrome.tabs.update(tabId, { url: blockedUrl }); } catch {}
     }
@@ -527,7 +527,7 @@ chrome.tabs.onCreated.addListener((tab) => {
   enqueue(async () => {
     const matched = await isBlockedHost(host);
     if (matched) {
-      const blockedUrl = chrome.runtime.getURL('blocked.html') +
+      const blockedUrl = chrome.runtime.getURL('blocked/blocked.html') +
         `?host=${encodeURIComponent(matched)}&url=${encodeURIComponent(tab.url)}&remain=${encodeURIComponent(String(await getRemainingForBlockPage()))}`;
       try { await chrome.tabs.update(tab.id, { url: blockedUrl }); } catch {}
     }

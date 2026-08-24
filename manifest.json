@@ -12,10 +12,10 @@
   "permissions": ["storage", "alarms", "offscreen", "notifications", "tabs"],
   "host_permissions": ["<all_urls>"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "js/background.js"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_title": "FocusFlow"
   },
   "icons": {
@@ -26,7 +26,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["blocked.html"],
+      "resources": ["blocked/blocked.html"],
       "matches": ["<all_urls>"]
     }
   ],

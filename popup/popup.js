@@ -556,7 +556,7 @@ $('import-file').addEventListener('change', async (e) => {
 });
 
 $('btn-home')?.addEventListener('click', () => {
-  const url = chrome.runtime.getURL('home.html');
+  const url = chrome.runtime.getURL('home/home.html');
   chrome.tabs.create({ url });
 });
 
