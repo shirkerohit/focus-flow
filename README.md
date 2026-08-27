@@ -6,7 +6,7 @@
 
 **Deep work, without the noise.** Ambient soundscapes, Pomodoro cycles, site blocker, daily goals, weather, and a beautiful Focus Home — all local, private, and offline-first.
 
-> **Store short description (132 chars):** Focus soundscapes, Pomodoro, site blocker & goals to stay in flow. Local-only, private, with Home dashboard & weather.
+> Focus soundscapes, Pomodoro, site blocker & goals to stay in flow. Local-only, private, with Home dashboard & weather.
 
 No accounts. No cloud sync. No analytics. No clutter.
 
@@ -39,20 +39,11 @@ No accounts. No cloud sync. No analytics. No clutter.
 - **Tools** — Export/Import JSON (`settings+sessions+pomodoro+weather`), Reset stats, keyboard `Alt+Shift+P` pause/resume, `Alt+Shift+S` stop, `Space` in popup.
 - **Persistence & Recovery** — every transition persisted to `chrome.storage.local` with promise queue; `endsAt` + `chrome.alarms` survives popup close and browser restart via `recover()`.
 
-## Screenshots
-
-> Replace placeholders before store submission.
-
-- `home-light.png` — Home light theme, hero timer, weather, blocker
-- `home-dark.png` — Home dark theme with orbs
-- `popup.png` — Popup 380×600, sounds + timer + dashboard
-- `blocked.png` — Blocked interstitial
-
 ## Installation
 
-### From Chrome Web Store (once published)
-1. Visit the store listing (link after publish)
-2. Click **Add to Chrome** → **Add to Edge** works too (Chromium)
+### From Edge Web Store
+1. Visit the store listing
+2. Click **Add to Edge** → works too (Chromium)
 
 ### Developer mode (local)
 1. `chrome://extensions` (or `edge://extensions`) → enable **Developer mode**
@@ -97,7 +88,6 @@ focusflow/
 ├── utils.js               # Clamp, format, date, host matching, streaks
 ├── assets/
 │   ├── audio/             # rain.mp3 3.8 MB, cafe.mp3 1.1 MB, forest.mp3 5.0 MB, ocean.mp3 6.3 MB, astral.mp3 5.7 MB
-│   │   └── ATTRIBUTION.md # CC0/CC BY credits + credible source notes
 │   └── icons/             # 16/32/48/128
 ├── PRIVACY.md
 ├── STORE_LISTING.md       # Store copy/paste
@@ -133,8 +123,6 @@ Validated on read; corrupted → defaults. Dashboard computed on fly.
 - **Flow:** user types city → debounced search → picks result → `ff_weather_location` saved → background `ff-weather-sync` alarm every 30 min fetches and caches → widget shows `emoji temp label` + meta, `Change` clears location. If cache missing or >30 min stale on open, fetch immediately (real-time sync).
 
 ## Audio Attribution
-
-See `assets/audio/ATTRIBUTION.md`. Summary:
 - Rain `CC BY 4.0` Orange Free Sounds (Zoom H5)
 - Cafe `CC0` Freesound `Ultra-Edward 823831` (no music, chatter+espresso)
 - Forest/Ocean/Astral `CC BY-NC 4.0` Orange Free Sounds (stream+birds, sea waves, ambient pad) — replace for commercial store if needed; Rain+Cafe already commercial-friendly.
@@ -143,29 +131,10 @@ See `assets/audio/ATTRIBUTION.md`. Summary:
 
 No build. Edit files, reload extension in `chrome://extensions`.
 
-```bash
-# optional: zip for store
-powershell -Command "Compress-Archive -Path .\* -DestinationPath focusflow-v1.1.0.zip -Force"
-```
-
-## Changelog
-
-### 1.1.0 — Publish ready
-- High-quality real recordings (was 345 KB placeholder loops)
-- Home full page with Site Blocker manager, theme toggle, weather
-- Weather widget (Open-Meteo, 30-min sync)
-- Dark/Light/Auto theme synced popup↔home
-- Instant sound switching via buffer cache (was 1.2 s)
-- Clean toggle switches, Import aligned, chart bottom-aligned fix
-- Per-site bypass map (was single host), robust `blocked.html` (CSP external script, `about:blank` fallback)
-- Attribution, privacy, store assets
-
-### 1.0.0 — Initial
-
 ## License
 
-MIT — see `LICENSE`. Audio files keep their original CC licences (see `ATTRIBUTION.md`).
+MIT — see `LICENSE`. Audio files keep their original CC licences
 
 ## Credits
 
-Built with Web Audio, `chrome.storage`, `chrome.alarms`, `chrome.offscreen`. Weather by Open-Meteo. Icons placeholder — replace for store if needed.
+Built with Web Audio, `chrome.storage`, `chrome.alarms`, `chrome.offscreen`. Weather by Open-Meteo.
