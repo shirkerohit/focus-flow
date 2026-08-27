@@ -10,7 +10,16 @@
 
 No accounts. No cloud sync. No analytics. No clutter.
 
-![Dark and light theme](https://via.placeholder.com/1280x720?text=Add+screenshots%3A+home-light.png+home-dark.png)
+<img width="218" height="302" alt="image" src="https://github.com/user-attachments/assets/22459340-bbd2-435e-977e-8c0cb872c930" />
+<img width="220" height="298" alt="image" src="https://github.com/user-attachments/assets/d85ca881-c726-4008-bcff-dbae85ed076f" />
+<img width="218" height="299" alt="image" src="https://github.com/user-attachments/assets/49a4fd6b-f7e1-486b-870c-217d4ce9f06e" />
+
+<img width="640" height="400" alt="image" src="https://github.com/user-attachments/assets/4e1962ff-83ff-48bd-85ee-87c855ea6e56" />
+<img width="640" height="400" alt="image" src="https://github.com/user-attachments/assets/a33cb18d-08f5-4949-8d2b-7932b2e46c25" />
+<img width="640" height="400" alt="image" src="https://github.com/user-attachments/assets/7cea5de2-2f4a-41e8-ac96-968d43287d36" />
+
+
+
 
 ---
 
