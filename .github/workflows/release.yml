@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package extension
+        run: |
+          zip -r focusflow.zip \
+            manifest.json \
+            popup/ \
+            js/ \
+            home/ \
+            blocked/ \
+            assets/ \
+            -x "*.DS_Store"
+
+      - name: Get version from tag
+        id: version
+        run: echo "tag=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: FocusFlow ${{ steps.version.outputs.tag }}
+          body: |
+            ## Install (Unpacked)
+
+            1. Download `focusflow.zip` below
+            2. Extract the zip to a folder
+            3. Open `chrome://extensions` (Chrome) or `edge://extensions` (Edge)
+            4. Enable **Developer mode**
+            5. Click **Load unpacked** and select the extracted folder
+
+            > Your settings and data are stored locally. This extension does not send any data externally.
+          files: focusflow.zip
+          draft: false
+          prerelease: false

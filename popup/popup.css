@@ -50,11 +50,28 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
-  width: 380px;
-  height: 600px;
-  overflow-y: auto;
+html {
+  width: 440px;
+  height: 800px;
   scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 4px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+  border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
 body {
@@ -64,6 +81,7 @@ body {
   background: var(--bg);
   padding: 14px 14px 10px;
   user-select: none;
+  overflow-y: auto;
 }
 
 /* ---------- Header ---------- */
